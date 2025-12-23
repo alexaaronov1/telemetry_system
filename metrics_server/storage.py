@@ -1,3 +1,7 @@
+"""
+In-memory storage for the latest telemetry snapshot.
+"""
+
 import time
 
 class TelemetryStorage:
@@ -6,6 +10,7 @@ class TelemetryStorage:
 
     def update(self, data):
         ts = int(time.time())
+        # Build a new snapshot with timestamp and replace the reference atomically
         self._snapshot = {
             sw: {**metrics, "timestamp": ts}
             for sw, metrics in data.items()

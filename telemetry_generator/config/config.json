@@ -1,6 +1,6 @@
 { 
     "switches": {
-        "count": 100000
+        "count": 4
     },
     "metrics": [
         "bandwidth_mbps",

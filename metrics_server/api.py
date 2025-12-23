@@ -1,10 +1,14 @@
+"""
+REST API for serving aggregated telemetry metrics.
+"""
+
 import time
 import os
 import json
 import logging
 from flask import Flask, request, jsonify
-from storage import TelemetryStorage
-from ingestion import start_ingestion
+from .storage import TelemetryStorage
+from .ingestion import start_ingestion
 
 DEFAULT_LOG_LEVEL = "INFO"
 

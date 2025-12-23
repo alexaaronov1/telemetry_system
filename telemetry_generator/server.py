@@ -1,3 +1,7 @@
+"""
+Simulated telemetry generator exposing switch metrics via HTTP.
+"""
+
 import os
 import time
 import random

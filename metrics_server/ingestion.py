@@ -1,3 +1,7 @@
+"""
+Background ingestion loop that periodically fetches telemetry data.
+"""
+
 import csv
 import io
 import time
