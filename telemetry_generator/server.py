@@ -20,6 +20,8 @@ ERROR_PROBABILITY = 0.1  # Probability (0–1) of introducing packet errors (rar
 
 # Allow port override via environment variable
 SERVER_PORT = int(os.getenv("GENERATOR_PORT", 9001))
+SERVER_HOST = os.getenv("GENERATOR_HOST", "127.0.0.1")
+
 
 # -----------------------
 # Configuration loading
@@ -113,4 +115,4 @@ def counters():
 
 if __name__ == "__main__":
     threading.Thread(target=update_metrics, daemon=True).start()
-    app.run(port=SERVER_PORT)
+    app.run(host=SERVER_HOST, port=SERVER_PORT)

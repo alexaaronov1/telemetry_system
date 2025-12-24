@@ -45,6 +45,8 @@ configure_logging(config.get("logging", {}).get("level", DEFAULT_LOG_LEVEL))
 # -----------------------
 # Flask app
 # -----------------------
+METRICS_SERVER_HOST = os.getenv("METRICS_SERVER_HOST", "127.0.0.1")
+METRICS_SERVER_PORT = int(os.getenv("METRICS_SERVER_PORT", 8080))
 
 app = Flask(__name__)
 
@@ -98,4 +100,4 @@ def list_metrics():
    return jsonify(storage.snapshot())
 
 if __name__ == "__main__":
-    app.run(port=8080)
+    app.run(host=METRICS_SERVER_HOST, port=METRICS_SERVER_PORT)
